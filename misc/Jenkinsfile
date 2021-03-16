@@ -3,8 +3,7 @@ node {
    stage('Preparation') {
      checkout scm
      sh "git rev-parse --short HEAD > .git/commit-id"                        
-     commit_id = readFile('.git/commit-id').trim()
-      echo commit_id
+     commit_id = readFile('.git/commit-id').trim()      
       cat commit_id > commit.txt
    }
    stage('test') {
