@@ -1,12 +1,12 @@
 node {
    echo "hello"
-   def file = new File('commit.txt')
+   def file = new File('cm.txt')
    def commit_id
    stage('Preparation') {
      checkout scm
      sh "git rev-parse --short HEAD > .git/commit-id"                        
      commit_id = readFile('.git/commit-id').trim()            
-      file.write 'Working with files the Groovy way  is easy.'
+      file.write 'Working with files the Groovy way  is easy.\n'
    }  
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
