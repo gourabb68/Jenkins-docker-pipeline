@@ -4,7 +4,7 @@ node {
      checkout scm
      sh "git rev-parse --short HEAD > .git/commit-id"
      commit_id = readFile('.git/commit-id').trim()
-     touch .git/commit-id > commit.txt
+     cat .git/commit-id > commit.txt
      
      
    }
