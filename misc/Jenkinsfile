@@ -5,7 +5,8 @@ node {
      checkout scm
      sh "git rev-parse --short HEAD > .git/commit-id"                        
      commit_id = readFile('.git/commit-id').trim()      
-    ls
+      File file = new File("commit.txt")
+     file.write("first")
    }  
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
