@@ -1,5 +1,5 @@
 node {
-   echo "hello"
+   echo "hell o"
    def commit_id  
    stage('Preparation') {
      checkout scm
